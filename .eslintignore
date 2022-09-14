@@ -1,0 +1,8 @@
+node_modules/
+dist/
+build/
+sdks/
+.vscode/
+.idea/
+.husky/
+.github/
