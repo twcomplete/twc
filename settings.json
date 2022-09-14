@@ -1,0 +1,25 @@
+// 이 프로젝트에만 적용될 vscode의 설정 파일 입니다.
+// vscode 설정은 json with comments 형식으로 json 이지만 주석을 달 수 있습니다.
+{
+    // 타입스크립트 오류를 프로젝트 전체 파일에서 자동 검색
+    // 기본적으로 vscode는 ts 파일을 열어야 오류 체크를 하는데, 열지 않아도 전체 체크하는 실험적 기능
+    "typescript.tsserver.experimental.enableProjectDiagnostics": true,
+    // 저장시 자동 포맷
+    "editor.formatOnSave": true,
+    // 기본 포매터로 prettier 설정
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    // 기본 포매터 사용 중지
+    "javascript.format.enable": false,
+    "typescript.format.enable": false,
+    // eslint 설정
+    "eslint.packageManager": "yarn",
+    "eslint.lintTask.enable": true,
+    // todo tree 확장
+    "todo-tree.filtering.excludeGlobs": ["**/node_modules", "**/sdks"],
+    // jest
+    "jest.autoRun": "off",
+    "jest.jestCommandLine": "yarn test",
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }
+}
