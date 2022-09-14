@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "outDir": "./dist",
+        "module": "commonjs",
+        "declaration": true,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "target": "es6",
+        "allowJs": false,
+        "checkJs": false,
+        "removeComments": false, // 개발용으로 models 참조를 많이 하므로 주석 유지 해줌 
+    },
+    "exclude": ["node_modules", "dist", "./dist"]
+}
