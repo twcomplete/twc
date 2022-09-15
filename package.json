@@ -1,0 +1,14 @@
+{
+    "name": "root",
+    "private": true,
+    "workspaces": [
+        "packages/*"
+    ],
+    "scripts": {
+        "models:update": "cd packages/twc-models && yarn version --patch --no-git-tag-version && yarn build && cd .. && yarn"
+    },
+    "devDependencies": {
+        "lerna": "^5.5.1"
+    },
+    "version": "0.0.1"
+}
