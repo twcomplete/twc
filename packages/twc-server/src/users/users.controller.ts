@@ -1,4 +1,4 @@
-import { Controller, Get } from '@nestjs/common';
+import { Body, Controller, Get, Post } from '@nestjs/common';
 import { UsersService } from './users.service';
 import { User } from '@twc/twc-models';
 import { ApiTags } from '@nestjs/swagger';
@@ -11,5 +11,10 @@ export class UsersController {
   @Get()
   getUsers(): string {
     return this.usersService.getUsers();
+  }
+
+  @Post()
+  save(@Body() input) {
+    return this.usersService.save(input);
   }
 }
