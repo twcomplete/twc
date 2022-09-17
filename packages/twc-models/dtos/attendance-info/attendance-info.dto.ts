@@ -1,5 +1,5 @@
 export class AttendaceInformation {
-    _id: number;
+    id: number;
     userId: number;
     attendTime: Date;
 }

@@ -58,16 +58,26 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
-## Support
+## Install MongoDB on macOS
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+```bash
+# Install the Xcode command-line tools by running the following command in your macOS Terminal
+$ xcode-select --install
+
+# Tap the MongoDB Homebrew Tap to download the official Homebrew formula for MongoDB and the Database Tools, by running the following command in your macOS Terminal
+$ brew tap mongodb/brew
+
+# To update Homebrew and all existing formulae
+$ brew update
+
+# To install MongoDB, run the following command in your macOS Terminal application
+$ brew install mongodb-community@6.0
+```
 
 ## Stay in touch
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+- Author - [Kwangmin KIM](kkm@imweb.me)
 
 ## License
 
-Nest is [MIT licensed](LICENSE).
+TWC is [MIT licensed](LICENSE).
