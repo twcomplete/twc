@@ -1,10 +1,15 @@
 import React from 'react';
+import Dday from './dday';
 
 const Section = () => {
   return (
-    <main>
-      <h1>ㅇㅇㅇ</h1>
-    </main>
+    <>
+    <section className='flex justify-center items-center
+    bg-indigo-400 w-full h-screen'>
+        <h1 className='font-bold text-3xl'>Ooo</h1>
+        <Dday name="hana"></Dday>
+      </section>
+    </>
   );
 }
 

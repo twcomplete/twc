@@ -12,13 +12,16 @@
         "@emotion/react": "^11.10.4",
         "@emotion/styled": "^11.10.4",
         "@headlessui/react": "^1.7.1",
+        "@hookform/resolvers": "^2.9.8",
         "@twc/twc-models": "file:../twc-models/dist",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
-        "recoil": "^0.7.5"
+        "react-hook-form": "^7.35.0",
+        "recoil": "^0.7.5",
+        "yup": "^0.32.11"
     },
     "devDependencies": {
-        "@types/react": "^18.0.17",
+        "@types/react": "^18.0.20",
         "@types/react-dom": "^18.0.6",
         "@vitejs/plugin-react": "^2.1.0",
         "autoprefixer": "^10.4.11",
