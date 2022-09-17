@@ -1,13 +1,10 @@
 import React from 'react'
-import Layout from './components/Layout/Layout';
 import ReactDOM from 'react-dom/client'
 import App from './App'
 import './style/index.css'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <Layout>
-      <App/>
-    </Layout>
+    <App/>
   </React.StrictMode>
 )
