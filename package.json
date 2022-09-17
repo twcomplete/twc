@@ -5,7 +5,8 @@
         "packages/*"
     ],
     "scripts": {
-        "models:update": "cd packages/twc-models && yarn version --patch --no-git-tag-version && yarn build && cd .. && yarn"
+        "models:update": "cd packages/twc-models && yarn version --patch --no-git-tag-version && yarn build && cd .. && yarn",
+        "server:up": "cd packages/twc-server && yarn start:prod"
     },
     "devDependencies": {
         "lerna": "^5.5.1"
