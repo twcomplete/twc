@@ -9,9 +9,10 @@
         "preview": "vite preview"
     },
     "dependencies": {
-        "@twc/twc-models": "file:../twc-models/dist",
         "@emotion/react": "^11.10.4",
         "@emotion/styled": "^11.10.4",
+        "@headlessui/react": "^1.7.1",
+        "@twc/twc-models": "file:../twc-models/dist",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
         "recoil": "^0.7.5"
