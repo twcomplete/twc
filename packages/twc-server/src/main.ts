@@ -24,8 +24,8 @@ async function bootstrap() {
   // nestjs-redoc 설정
   // 설정 상세: https://www.npmjs.com/package/nestjs-redoc
   const redocOptions: RedocOptions = {
-    title: '#ㅇㅇㅇ',
-    logo: {
+      title: '#ㅇㅇㅇ',
+      logo: {
       url: '',
       altText: '오운완',
     },

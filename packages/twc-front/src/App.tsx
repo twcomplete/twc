@@ -3,7 +3,6 @@ import './style/App.css';
 import './style/index.css';
 import { User, ActivityLog, AttendaceInformation } from '@twc/twc-models';
 import Layout from './components/Layout/Layout';
-
 import react from 'react';
 import axios from 'axios';
 

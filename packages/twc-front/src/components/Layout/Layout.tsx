@@ -8,7 +8,7 @@ import { LoginInput, LoginOutput, User, ActivityLog, AttendaceInformation } from
 class Layout extends React.Component {
   render(){
     return (
-      <div className='flex flex-col from-indigo-100 via-indigo-300 to-indigo-500 bg-gradient-to-b '>
+      <div className='flex flex-col from-indigo-100 via-indigo-300 to-indigo-500 bg-gradient-to-b h-screen'>
         <Header />
         <Signup/>
         <Section/>

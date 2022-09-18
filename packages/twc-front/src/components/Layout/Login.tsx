@@ -11,19 +11,18 @@ const Login = () => {
     const [pwd, setPwd] = React.useState('');
     const [err, setErr] = React.useState('');
     const [success, setSuccess] = React.useState(false);
-
     const handleId = (e: React.ChangeEvent<HTMLInputElement>) => {};
 
-   useEffect(() => {
+    useEffect(() => {
     let isMounted = true;
     const controller = new AbortController();
     console.log(controller);
 
     const getUser = async () => {
         try {
-            const response = await axios.get('http://localhost:3000r', { signal: controller.signal });
+            const response = await axios.get('http://localhost:3000', { signal: controller.signal });
             console.log(response.data);
-            isMounted && setId(response.data);
+    
         }catch(err){
             console.log(err);
         }
@@ -33,20 +32,29 @@ const Login = () => {
         return () => {
             isMounted = false;
             controller.abort();
-       } 
+    } 
     setErr('')
-   }, [id, pwd]);
+    }, [id, pwd]);
 
-   const handleSubmit = async (e:any) => {
+    const postUser = async () => {
+        try {
+            const res = await axios.post('http://localhost:3000/users',
+             { id, pwd });
+            console.log(res.data);
+        } catch (err) {
+            console.log(err);
+        }
+    }
+    postUser()
+
+    const handleSubmit = async (e:any) => {
         e.preventDefault();
-        console.log(id, pwd);
         setId('');
         setPwd('');
         setSuccess(true);
 }
-
     return (
-    <div id='loginModal' aria-hidden="true" className=' w-full h-full backdrop-blur-sm overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 md:inset-0 h-modal md:h-full bg-[rgba(0,0,0,0.3)]'>
+    <div id='loginModal' aria-hidden="true" className='w-full h-full backdrop-blur-sm overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 md:inset-0 h-modal md:h-full bg-[rgba(0,0,0,0.3)]'>
         <div className="relative z-50 flex flex-col justify-center min-h-screen overflow-hidden">
             <div className="w-full flex flex-col justify-center p-6 m-auto bg-white rounded-md shadow-md max-w-2xl sm:max-w-xl sm:text-xl">
                 <h1 className="text-3xl font-semibold text-center text-indigo-700">
@@ -54,7 +62,7 @@ const Login = () => {
                 </h1>
                 <form className="mt-6" onSubmit={handleSubmit}>
                     <div className="mb-2">
-                        <label htmlFor="email"
+                        <label htmlFor="id"
                             className="block text-sm font-semibold text-gray-800">
                             Email
                         </label>
@@ -62,7 +70,7 @@ const Login = () => {
                             setId(e.target.value);
                             console.log(e.target.value);
                         }}
-                            type="email"
+                            type="text"
                             id="email"
                             ref={userRef}
                             autoComplete='off'
