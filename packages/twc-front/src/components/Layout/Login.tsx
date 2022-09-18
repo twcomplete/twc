@@ -4,7 +4,6 @@ import axios from 'axios';
 
 const Login = () => {
     const userRef = useRef<HTMLInputElement>(null);
-    const errRef = useRef<HTMLInputElement>(null);
 
     const [id, setId] = React.useState('');
     const [pwd, setPwd] = React.useState('');
@@ -17,6 +16,7 @@ const Login = () => {
         const controller = new AbortController();
         console.log(controller);
     }, [id, pwd]);
+
         const handleSubmit = async (e: any) => {
         e.preventDefault();
         setId('');
