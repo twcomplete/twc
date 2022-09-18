@@ -9,7 +9,11 @@ import { useEffect, useState } from 'react';
 const title = {
   title: 'Ooo'
 }
-const [id, setId] = React.useState('');
+
+
+const UserPage = () => 
+
+{const [id, setId] = React.useState('');
 const [pwd, setPwd] = React.useState('');
 const [err, setErr] = React.useState('');
 const [success, setSuccess] = React.useState(false);
@@ -48,7 +52,6 @@ const [success, setSuccess] = React.useState(false);
     }
     postUser()
 
-const UserPage = () => {
   const workOutProverbs = [
     '오늘은 운동을 하지 않았다. 살 이유가 없다.',
     '운동하지 않는 자 먹지도 말라',
@@ -62,11 +65,11 @@ const UserPage = () => {
 
   return (
     <>
+    <Signup/>
     <Login/>
-    <TwcCal></TwcCal>
     <section className='flex flex-col justify-center items-center
     w-full h-full'>
-      <div className='max-w-[80%] flex flex-col justify-center items-center text-center '>
+      <div className='max-w-[90%] flex flex-col justify-center items-center text-center '>
         <h1 className='text-4xl font-bold text-white opacity-40'>"{workOutProverb}"</h1>
         </div>
         <div className='p-6'>
@@ -75,6 +78,7 @@ const UserPage = () => {
         </h1>
         <Dday name={id}></Dday>
         </div>
+      <TwcCal></TwcCal>
       </section>
     </>
   );

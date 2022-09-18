@@ -15,3 +15,7 @@ html {
   font-family: 'GmarketSansMedium';
   letter-spacing: .1rem;
 }
+
+.fc-toolbar-title {
+  font-size: 3rem;
+}

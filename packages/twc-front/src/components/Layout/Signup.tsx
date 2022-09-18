@@ -3,7 +3,7 @@ import React, { useCallback, useState, useEffect, MouseEvent } from 'react';
 const Signup = () => {
     return (
         <div
-            id="loginModal"
+            id="SignupModal"
             aria-hidden="true"
             className="hidden w-full h-full backdrop-blur-sm overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 md:inset-0 h-modal md:h-full bg-[rgba(0,0,0,0.3)]"
         >
@@ -75,7 +75,8 @@ const Signup = () => {
                         <a
                             href="#"
                             className="font-medium text-indigo-600 hover:underline"
-                            onClick={() => alert('로그인창으로')}
+                            onClick={() =>{ document.getElementById('loginModal')?.classList.remove('hidden');
+                            document.getElementById('SignupModal')?.classList.add('hidden')}}
                         >
                             Log in
                         </a>
