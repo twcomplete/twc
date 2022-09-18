@@ -8398,11 +8398,14 @@
     "@emotion/styled" "^11.10.4"
     "@headlessui/react" "^1.7.1"
     "@hookform/resolvers" "^2.9.8"
+    "@reduxjs/toolkit" "^1.8.5"
     "@twc/twc-models" "file:../twc-models/dist"
+    "axios" "^0.27.2"
     "react" "^18.2.0"
     "react-dom" "^18.2.0"
     "react-hook-form" "^7.35.0"
     "recoil" "^0.7.5"
+    "redux" "^4.2.0"
     "yup" "^0.32.11"
 
 "twc-models@file:/Users/ihana/Library/Mobile Documents/com~apple~CloudDocs/twc/packages/twc-models":

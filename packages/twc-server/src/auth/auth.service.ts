@@ -11,5 +11,4 @@ export class AuthService {
     };
     if (input.id) return rt;
   }
-
 }

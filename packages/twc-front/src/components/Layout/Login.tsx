@@ -36,22 +36,13 @@ const Login = () => {
     setErr('')
     }, [id, pwd]);
 
-    const postUser = async () => {
-        try {
-            const res = await axios.post('http://localhost:3000/users',
-             { id, pwd });
-            console.log(res.data);
-        } catch (err) {
-            console.log(err);
-        }
-    }
-    postUser()
 
     const handleSubmit = async (e:any) => {
         e.preventDefault();
         setId('');
         setPwd('');
         setSuccess(true);
+        console.log
 }
     return (
     <div id='loginModal' aria-hidden="true" className='w-full h-full backdrop-blur-sm overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 md:inset-0 h-modal md:h-full bg-[rgba(0,0,0,0.3)]'>
@@ -108,7 +99,7 @@ const Login = () => {
                     <div className="mt-6">
                         <button className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-indigo-700 rounded-md hover:bg-indigo-600 focus:outline-none focus:bg-indigo-600"
                         type='submit'
-                        onClick={() => alert()}>
+                       >
                             Login
                         </button>
                     </div>
