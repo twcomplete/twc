@@ -1,7 +1,9 @@
 import React, { useRef, useCallback, useState, useEffect, MouseEvent} from 'react';
 import { User, ActivityLog, AttendaceInformation, LoginInput } from '@twc/twc-models';
+import axios from 'axios';
 
 const Login = () => {
+
     const userRef = useRef<HTMLInputElement>(null);
     const errRef = useRef<HTMLInputElement>(null);
 
@@ -13,7 +15,26 @@ const Login = () => {
     const handleId = (e: React.ChangeEvent<HTMLInputElement>) => {};
 
    useEffect(() => {
-    setErr('');
+    let isMounted = true;
+    const controller = new AbortController();
+    console.log(controller);
+
+    const getUser = async () => {
+        try {
+            const response = await axios.get('http://localhost:3000r', { signal: controller.signal });
+            console.log(response.data);
+            isMounted && setId(response.data);
+        }catch(err){
+            console.log(err);
+        }
+        }
+        getUser();
+
+        return () => {
+            isMounted = false;
+            controller.abort();
+       } 
+    setErr('')
    }, [id, pwd]);
 
    const handleSubmit = async (e:any) => {
@@ -22,7 +43,7 @@ const Login = () => {
         setId('');
         setPwd('');
         setSuccess(true);
-   }
+}
 
     return (
     <div id='loginModal' aria-hidden="true" className=' w-full h-full backdrop-blur-sm overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 md:inset-0 h-modal md:h-full bg-[rgba(0,0,0,0.3)]'>
@@ -31,7 +52,7 @@ const Login = () => {
                 <h1 className="text-3xl font-semibold text-center text-indigo-700">
                 Ooo
                 </h1>
-                <form className="mt-6" onSubmit={handleId}>
+                <form className="mt-6" onSubmit={handleSubmit}>
                     <div className="mb-2">
                         <label htmlFor="email"
                             className="block text-sm font-semibold text-gray-800">
@@ -47,7 +68,7 @@ const Login = () => {
                             autoComplete='off'
                             value={id}
                             className="block w-full px-4 py-2 mt-2 text-indigo-700 bg-white border rounded-md focus:border-indigo-400 focus:ring-indigo-300 focus:outline-none focus:ring focus:ring-opacity-40"
-                            placeholder="Enter your email" />
+                            placeholder="Enter your email"/>
                     </div>
                     <div className="mb-2">
                         <label

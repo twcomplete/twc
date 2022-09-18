@@ -1,13 +1,11 @@
 import React from 'react';
 import Dday from './Dday';
-
+import Login from './Login';
 const title = {
   title: 'Ooo'
 }
 const Section = () => {
-  const userdata = {
-    name: '하나',
-  }
+  
   const workOutProverbs = [
     '오늘은 운동을 하지 않았다.',
     '운동하지 않는 자 먹지도 말라',
@@ -18,8 +16,9 @@ const Section = () => {
 
   return (
     <>
+    <Login/>
     <section className='flex flex-col justify-center items-center
-     w-full h-screen'>
+    w-full h-screen'>
       <div className='max-w-[80%] flex flex-col justify-center items-center text-center '>
         <h1 className='text-4xl font-bold text-white opacity-40'>"{workOutProverb}"</h1>
         </div>
@@ -27,7 +26,7 @@ const Section = () => {
         <h1 className='mb-3 font-bold text-9xl text-white'>
           {title.title}
         </h1>
-        <Dday name={userdata.name}></Dday>
+        <Dday name="hana"></Dday>
         </div>
       </section>
     </>

@@ -12,7 +12,6 @@ class Layout extends React.Component {
         <Header />
         <Signup/>
         <Section/>
-        <Login/>
         <Footer/>
       </div>
     )
