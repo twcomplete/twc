@@ -16,14 +16,13 @@ const Login = () => {
         let isMounted = true;
         const controller = new AbortController();
         console.log(controller);
-
+    }, [id, pwd]);
         const handleSubmit = async (e: any) => {
         e.preventDefault();
         setId('');
         setPwd('');
         setSuccess(true);
-        }
-    }, [id, pwd]);
+    }
 
     return (
         <div

@@ -3,6 +3,7 @@ import React from 'react';
 import Dday from './Dday';
 import Login from './Login';
 import Signup from './Signup';
+import TwcCal from './TwcCal';
 import { useEffect, useState } from 'react';
 
 const title = {
@@ -62,6 +63,7 @@ const UserPage = () => {
   return (
     <>
     <Login/>
+    <TwcCal></TwcCal>
     <section className='flex flex-col justify-center items-center
     w-full h-full'>
       <div className='max-w-[80%] flex flex-col justify-center items-center text-center '>
