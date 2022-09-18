@@ -6,10 +6,12 @@ import * as cors from 'cors';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  app.use(cors({
-    origin: '*',
-  }));  
-  
+  app.use(
+    cors({
+      origin: '*',
+    }),
+  );
+
   const config = new DocumentBuilder()
     .setTitle('#ㅇㅇㅇ')
     .setDescription('오운완 프로젝트입니다.')
@@ -23,15 +25,23 @@ async function bootstrap() {
   // 설정 상세: https://www.npmjs.com/package/nestjs-redoc
   const redocOptions: RedocOptions = {
     title: '#ㅇㅇㅇ',
+    logo: {
+      url: '',
+      altText: '오운완',
+    },
+    favicon: '',
 
+    // 필드 알파벳순 정리 사용 안함
     sortPropsAlphabetically: false,
 
+    // swagger.json 다운로드 버튼 가리기
     hideDownloadButton: false,
-
     hideHostname: false,
 
+    // 필수값 먼저 출력 사용 안함
     requiredPropsFirst: false,
 
+    // 응답 섹션 확장 해두기 여부
     expandResponses: 'all',
   };
   await RedocModule.setup('/docs', app, document, redocOptions);
