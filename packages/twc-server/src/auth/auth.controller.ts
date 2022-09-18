@@ -8,7 +8,6 @@ import {
 import { ApiOperation, ApiResponse } from '@nestjs/swagger';
 import { LoginInput, LoginOutput } from '@twc/twc-models';
 import { AuthService } from './auth.service';
-
 @Controller('auth')
 export class AuthController {
   constructor(private readonly authService: AuthService) {}

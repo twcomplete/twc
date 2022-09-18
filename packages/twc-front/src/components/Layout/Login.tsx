@@ -1,21 +1,51 @@
-import React, {useCallback, useState, useEffect, MouseEvent} from 'react';
+import React, { useRef, useCallback, useState, useEffect, MouseEvent} from 'react';
+import { User, ActivityLog, AttendaceInformation, LoginInput } from '@twc/twc-models';
 
 const Login = () => {
-  return (
-    <div id='loginModal' aria-hidden="true" className='hidden w-full h-full backdrop-blur-sm overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 md:inset-0 h-modal md:h-full bg-[rgba(0,0,0,0.3)]'>
-      <div className="relative z-50 flex flex-col justify-center min-h-screen overflow-hidden">
+    const userRef = useRef<HTMLInputElement>(null);
+    const errRef = useRef<HTMLInputElement>(null);
+
+    const [id, setId] = React.useState('');
+    const [pwd, setPwd] = React.useState('');
+    const [err, setErr] = React.useState('');
+    const [success, setSuccess] = React.useState(false);
+
+    const handleId = (e: React.ChangeEvent<HTMLInputElement>) => {};
+
+   useEffect(() => {
+    setErr('');
+   }, [id, pwd]);
+
+   const handleSubmit = async (e:any) => {
+        e.preventDefault();
+        console.log(id, pwd);
+        setId('');
+        setPwd('');
+        setSuccess(true);
+   }
+
+    return (
+    <div id='loginModal' aria-hidden="true" className=' w-full h-full backdrop-blur-sm overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 md:inset-0 h-modal md:h-full bg-[rgba(0,0,0,0.3)]'>
+        <div className="relative z-50 flex flex-col justify-center min-h-screen overflow-hidden">
             <div className="w-full flex flex-col justify-center p-6 m-auto bg-white rounded-md shadow-md max-w-2xl sm:max-w-xl sm:text-xl">
                 <h1 className="text-3xl font-semibold text-center text-indigo-700">
                 Ooo
                 </h1>
-                <form className="mt-6">
+                <form className="mt-6" onSubmit={handleId}>
                     <div className="mb-2">
                         <label htmlFor="email"
                             className="block text-sm font-semibold text-gray-800">
                             Email
                         </label>
-                        <input
+                        <input onChange={(e) => {
+                            setId(e.target.value);
+                            console.log(e.target.value);
+                        }}
                             type="email"
+                            id="email"
+                            ref={userRef}
+                            autoComplete='off'
+                            value={id}
                             className="block w-full px-4 py-2 mt-2 text-indigo-700 bg-white border rounded-md focus:border-indigo-400 focus:ring-indigo-300 focus:outline-none focus:ring focus:ring-opacity-40"
                             placeholder="Enter your email" />
                     </div>
@@ -27,10 +57,16 @@ const Login = () => {
                             Password
                         </label>
                         <input
+                        onChange={(e) => {setPwd(e.target.value)
+                            console.log(e.target.value);}}
                             type="password"
+                            id="password"
+                            ref={userRef}
+                            autoComplete="off"
+                            value={pwd}
+                            required
                             className="block w-full px-4 py-2 mt-2 text-indigo-700 bg-white border rounded-md focus:border-indigo-400 focus:ring-indigo-300 focus:outline-none focus:ring focus:ring-opacity-40"
                             placeholder='Enter your password' 
-                            
                             />
                     </div>
                     <a
@@ -55,7 +91,6 @@ const Login = () => {
                     <a
                         href="#"
                         className="font-medium text-indigo-600 hover:underline"
-                        onClick={()=> alert('회원가입')}
                     >
                         Sign up
                     </a>

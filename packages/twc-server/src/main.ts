@@ -2,10 +2,14 @@ import { NestFactory } from '@nestjs/core';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { AppModule } from './app.module';
 import { RedocOptions, RedocModule } from 'nestjs-redoc';
+import * as cors from 'cors';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-
+  app.use(cors({
+    origin: '*',
+  }));  
+  
   const config = new DocumentBuilder()
     .setTitle('#ㅇㅇㅇ')
     .setDescription('오운완 프로젝트입니다.')
@@ -23,6 +27,7 @@ async function bootstrap() {
     sortPropsAlphabetically: false,
 
     hideDownloadButton: false,
+
     hideHostname: false,
 
     requiredPropsFirst: false,
@@ -30,7 +35,6 @@ async function bootstrap() {
     expandResponses: 'all',
   };
   await RedocModule.setup('/docs', app, document, redocOptions);
-
   await app.listen(3000);
 }
 bootstrap();

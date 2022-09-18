@@ -11,11 +11,11 @@ const Header = () => {
   const time = today.getTime();
   return (
     <header className='flex justify-evenly h-48 items-center text-white max-w-3xl m-auto'>
-      <div className='rounded-full p-3 bg-white text-indigo-400 shadow-lg shadow-indigo-300/50 mr-3'>
+      <div className='rounded-full p-2.5 bg-white max-w-[6rem] text-indigo-400 shadow-lg shadow-indigo-300/50 mr-3'>
       <img src={logo}
-      width='60px'/>
+       className='max-w-full'/>
       </div>
-      <div className='rounded-full p-8 bg-white shadow-lg shadow-indigo-300/50 text-indigo-400 px-10 text-4xl'>
+      <div className='rounded-full p-6 bg-white shadow-lg shadow-indigo-300/50 text-indigo-400 px-10 text-3xl'>
           <span className=''>
             {today.getFullYear()}년 {today.getMonth()}월 {today.getDate()}일
         </span>
