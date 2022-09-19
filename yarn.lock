@@ -1665,6 +1665,15 @@
     tslib "2.4.0"
     uuid "8.3.2"
 
+"@nestjs/common@^9.0.11":
+  version "9.0.11"
+  resolved "https://registry.npmjs.org/@nestjs/common/-/common-9.0.11.tgz"
+  integrity sha512-oYLIcOal3QOwcqt6goXovRNg8ZkalyOMjH0oYYzfJLrait6P7c6nAeWHu4qFDThY7GoZHEanLgji1qlqVEW09g==
+  dependencies:
+    iterare "1.2.1"
+    tslib "2.4.0"
+    uuid "8.3.2"
+
 "@nestjs/core@^8.0.0":
   version "8.4.7"
   resolved "https://registry.npmjs.org/@nestjs/core/-/core-8.4.7.tgz"
@@ -6458,7 +6467,7 @@ neo-async@^2.6.0, neo-async@^2.6.2:
 
 nestjs-redoc@^2.2.2:
   version "2.2.2"
-  resolved "https://registry.yarnpkg.com/nestjs-redoc/-/nestjs-redoc-2.2.2.tgz#f0a6c36c7d876f743ee152f3b266143e3293a57d"
+  resolved "https://registry.npmjs.org/nestjs-redoc/-/nestjs-redoc-2.2.2.tgz"
   integrity sha512-BubUvDhBXQ2/PEkI14ASxEut+MLKaW4S2tFX78LFB2WjZsdmBM7EEgWBp+8nGO64bZsAApA+kUPZgQ17x4yaQA==
   dependencies:
     "@hapi/joi" "^17.1.1"
