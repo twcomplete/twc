@@ -1,0 +1,10 @@
+{
+    "name": "twc-models",
+    "version": "1.0.11",
+    "main": "index.ts",
+    "scripts": {
+        "build": "tsc"
+    },
+    "author": "Kwangmin",
+    "license": "MIT"
+}
