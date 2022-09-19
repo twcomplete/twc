@@ -72,6 +72,9 @@ $ brew update
 
 # To install MongoDB, run the following command in your macOS Terminal application
 $ brew install mongodb-community@6.0
+
+# To start MongoDB, run the following command in your macOS Terminal application
+$ brew services start mongodb-community@6.0
 ```
 
 ## Stay in touch
