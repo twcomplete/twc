@@ -12,7 +12,7 @@ const App = () => {
         pwd: '21color',
     };
     const fetchUser = async () => {
-        axios.post('http://localhost:3000/auth', data).then((res) => {
+        axios.post('http://localhost:3000/attends', data).then((res) => {
             console.log(res);
         });
     };
