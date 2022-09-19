@@ -6474,7 +6474,11 @@ neo-async@^2.6.0, neo-async@^2.6.2:
 
 nestjs-redoc@^2.2.2:
   version "2.2.2"
+<<<<<<< HEAD
   resolved "https://registry.npmjs.org/nestjs-redoc/-/nestjs-redoc-2.2.2.tgz"
+=======
+  resolved "https://registry.yarnpkg.com/nestjs-redoc/-/nestjs-redoc-2.2.2.tgz#f0a6c36c7d876f743ee152f3b266143e3293a57d"
+>>>>>>> dev
   integrity sha512-BubUvDhBXQ2/PEkI14ASxEut+MLKaW4S2tFX78LFB2WjZsdmBM7EEgWBp+8nGO64bZsAApA+kUPZgQ17x4yaQA==
   dependencies:
     "@hapi/joi" "^17.1.1"
