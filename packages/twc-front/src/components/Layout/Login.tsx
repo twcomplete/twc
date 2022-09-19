@@ -9,20 +9,18 @@ const Login = () => {
     const [pwd, setPwd] = React.useState('');
     const [err, setErr] = React.useState('');
     const [success, setSuccess] = React.useState(false);
-    const handleId = (e: React.ChangeEvent<HTMLInputElement>) => {};
 
     useEffect(() => {
-        let isMounted = true;
         const controller = new AbortController();
         console.log(controller);
     }, [id, pwd]);
 
-        const handleSubmit = async (e: any) => {
+    const handleSubmit = async (e: any) => {
         e.preventDefault();
         setId('');
         setPwd('');
         setSuccess(true);
-    }
+    };
 
     return (
         <div
