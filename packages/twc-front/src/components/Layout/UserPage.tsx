@@ -10,7 +10,6 @@ const title = {
   title: 'Ooo'
 }
 
-
 const UserPage = () => 
 
 {const [id, setId] = React.useState('');
@@ -19,38 +18,31 @@ const [err, setErr] = React.useState('');
 const [success, setSuccess] = React.useState(false);
 
     useEffect(() => {
-    let isMounted = true;
     const controller = new AbortController();
     console.log(controller);
-
-    const getUsers = async () => {
-        try {
-            const response = await axios.get('http://localhost:3000', { signal: controller.signal });
-            console.log(response.data);
-    
-        }catch(err){
-            console.log(err);
-        }
-        }
-        getUsers();
-
-        return () => {
-            isMounted = false;
-            controller.abort();
-    } 
-    setErr('')
     }, [id, pwd]);
+    
+//     const getUsers = async () => {
+//         try {
+//         const response = await axios.get('http://localhost:3000', { signal: controller.signal });
+//         console.log(response.data);
+//         }catch(err){
+//             console.log(err);
+//       }
+//     }
+//       getUsers();
+// }, [id, pwd]);
 
-    const postUser = async () => {
-        try {
-            const res = await axios.post('http://localhost:3000/auth',
-            { id, pwd });
-            console.log(res.data);
-        } catch (err) {
-            console.log(err);
-        }
-    }
-    postUser()
+//     const postUser = async () => {
+//         try {
+//             const res = await axios.post('http://localhost:3000/',
+//             { id, pwd });
+//             console.log(res.data);
+//         } catch (err) {
+//             console.log(err);
+//         }
+//     }
+//     postUser()
 
   const workOutProverbs = [
     '오늘은 운동을 하지 않았다. 살 이유가 없다.',

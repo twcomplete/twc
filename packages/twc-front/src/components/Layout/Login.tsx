@@ -1,5 +1,4 @@
 import React, { useRef, useCallback, useState, useEffect, MouseEvent } from 'react';
-import { User, ActivityLog, AttendaceInformation, LoginInput } from '@twc/twc-models';
 import axios from 'axios';
 
 const Login = () => {
@@ -93,7 +92,7 @@ const Login = () => {
                         {' '}
                         Don't have an account?{' '}
                         <a href="#" onClick={(e)=> {document.getElementById('loginModal')?.classList.add('hidden');
-                         document.getElementById('SignupModal')?.classList.remove('hidden')}} className="font-medium text-indigo-600 hover:underline">
+                        document.getElementById('SignupModal')?.classList.remove('hidden')}} className="font-medium text-indigo-600 hover:underline">
                             Sign up
                         </a>
                     </p>
