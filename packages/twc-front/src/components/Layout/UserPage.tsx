@@ -17,33 +17,6 @@ const [pwd, setPwd] = React.useState('');
 const [err, setErr] = React.useState('');
 const [success, setSuccess] = React.useState(false);
 
-    useEffect(() => {
-    const controller = new AbortController();
-    console.log(controller);
-    }, [id, pwd]);
-    
-//     const getUsers = async () => {
-//         try {
-//         const response = await axios.get('http://localhost:3000', { signal: controller.signal });
-//         console.log(response.data);
-//         }catch(err){
-//             console.log(err);
-//       }
-//     }
-//       getUsers();
-// }, [id, pwd]);
-
-//     const postUser = async () => {
-//         try {
-//             const res = await axios.post('http://localhost:3000/',
-//             { id, pwd });
-//             console.log(res.data);
-//         } catch (err) {
-//             console.log(err);
-//         }
-//     }
-//     postUser()
-
   const workOutProverbs = [
     '오늘은 운동을 하지 않았다. 살 이유가 없다.',
     '운동하지 않는 자 먹지도 말라',
