@@ -5,8 +5,8 @@
         "packages/*"
     ],
     "scripts": {
-        "models:update": "cd packages/twc-models && yarn version --patch --no-git-tag-version && yarn build && cd .. && yarn",
-        "server:up": "cd packages/twc-server && yarn start:prod"
+        "models:update": "cd packages/twc-models && yarn version --patch --no-git-tag-version && yarn build && cd ../.. && yarn",
+        "server:up": "yarn models:update && cd packages/twc-server && yarn start:prod"
     },
     "devDependencies": {
         "@types/axios": "^0.14.0",
