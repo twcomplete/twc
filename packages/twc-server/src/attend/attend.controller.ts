@@ -1,6 +1,6 @@
 import { Body, Controller, Get, Post } from '@nestjs/common';
 import { ApiOperation, ApiBody } from '@nestjs/swagger';
-import { AttendInfoInput } from '@twc/twc-models';
+import { AttendaceInformation, AttendInfoInput } from '@twc/twc-models';
 import { AttendService } from './attend.service';
 
 @Controller('attends')
@@ -23,7 +23,13 @@ export class AttendController {
   @ApiBody({ type: AttendInfoInput })
   @Post()
   async create(@Body() input: AttendInfoInput) {
-    input.attendTime = new Date();
-    return await this.attendService.create(input);
+    const attend: AttendaceInformation = {
+      id: null,
+      userId: input.userId,
+      memo: input.memo,
+      attendTime: new Date(),
+    };
+
+    return await this.attendService.create(attend);
   }
 }

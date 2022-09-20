@@ -1,6 +1,6 @@
 import { Model } from 'mongoose';
 import { Inject, Injectable } from '@nestjs/common';
-import { AttendInfoInput } from '@twc/twc-models';
+import { AttendaceInformation, AttendInfoInput } from '@twc/twc-models';
 import constraints from 'src/constraints';
 import { Attend } from 'src/lib/interfaces/attend.interface';
 
@@ -11,7 +11,7 @@ export class AttendService {
     private readonly attendModel: Model<Attend>,
   ) {}
 
-  async create(input: AttendInfoInput): Promise<Attend> {
+  async create(input: AttendaceInformation): Promise<Attend> {
     const attend = new this.attendModel(input);
     return attend.save();
   }
