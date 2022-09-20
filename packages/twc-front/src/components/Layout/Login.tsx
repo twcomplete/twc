@@ -1,5 +1,4 @@
 import React, { useRef, useCallback, useState, useEffect, MouseEvent } from 'react';
-import { User, ActivityLog, AttendaceInformation, LoginInput } from '@twc/twc-models';
 import axios from 'axios';
 
 const Login = () => {
@@ -10,18 +9,6 @@ const Login = () => {
     const [err, setErr] = React.useState('');
     const [success, setSuccess] = React.useState(false);
 
-    useEffect(() => {
-        const controller = new AbortController();
-        console.log(controller);
-    }, [id, pwd]);
-
-    const handleSubmit = async (e: any) => {
-        e.preventDefault();
-        setId('');
-        setPwd('');
-        setSuccess(true);
-    };
-
     return (
         <div
             id="loginModal"
@@ -31,7 +18,7 @@ const Login = () => {
             <div className="relative z-50 flex flex-col justify-center min-h-screen overflow-hidden">
                 <div className="w-full flex flex-col justify-center p-6 m-auto bg-white rounded-md shadow-md max-w-2xl sm:max-w-xl sm:text-xl">
                     <h1 className="text-3xl font-semibold text-center text-indigo-700">Ooo</h1>
-                    <form className="mt-6" onSubmit={handleSubmit}>
+                    <form className="mt-6">
                         <div className="mb-2">
                             <label htmlFor="id" className="block text-sm font-semibold text-gray-800">
                                 Email
@@ -69,31 +56,8 @@ const Login = () => {
                                 placeholder="Enter your password"
                             />
                         </div>
-                        <div className="mb-2">
-                            <label htmlFor="password" className="block text-sm font-semibold text-gray-800">
-                                Password
-                            </label>
-                            <input
-                                onChange={(e) => {
-                                    setPwd(e.target.value);
-                                    console.log(e.target.value);
-                                }}
-                                type="password"
-                                id="password"
-                                ref={userRef}
-                                autoComplete="off"
-                                value={pwd}
-                                required
-                                className="block w-full px-4 py-2 mt-2 text-indigo-700 bg-white border rounded-md focus:border-indigo-400 focus:ring-indigo-300 focus:outline-none focus:ring focus:ring-opacity-40"
-                                placeholder="Enter your password"
-                            />
-                        </div>
-                        <a
-                            href="#"
-                            className="text-xs text-indigo-600 hover:underline"
-                            onClick={() => alert('비밀번호 찾기')}
-                        >
-                            <span className="">Forget Password?</span>
+                        <a href="#" className="text-xs text-indigo-600 hover:underline" onClick={() => alert('바보')}>
+                            <span className="">비밀번호 생각이 안나요?</span>
                         </a>
                         <div className="mt-6">
                             <button
@@ -108,7 +72,14 @@ const Login = () => {
                     <p className="mt-8 text-xs font-light text-center text-gray-700">
                         {' '}
                         Don't have an account?{' '}
-                        <a href="#" className="font-medium text-indigo-600 hover:underline">
+                        <a
+                            href="#"
+                            onClick={(e) => {
+                                document.getElementById('loginModal')?.classList.add('hidden');
+                                document.getElementById('SignupModal')?.classList.remove('hidden');
+                            }}
+                            className="font-medium text-indigo-600 hover:underline"
+                        >
                             Sign up
                         </a>
                     </p>

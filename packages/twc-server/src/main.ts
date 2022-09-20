@@ -18,6 +18,7 @@ async function bootstrap() {
     .setVersion('0.1')
     .addTag('ㅇㅇㅇ')
     .build();
+
   const document = SwaggerModule.createDocument(app, config);
   // SwaggerModule.setup('docs', app, document);
 

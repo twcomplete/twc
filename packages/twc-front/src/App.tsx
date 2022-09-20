@@ -7,19 +7,24 @@ import react from 'react';
 import axios from 'axios';
 
 const App = () => {
-  const fetchUser = async () => {
-    axios.get('http://localhost:3000')
-    .then((res) =>  res.data)
-  }
-  useEffect(() => {
-    fetchUser();
-  }, [])
-  return (
-    <div className="App">
-      <Layout />
-    </div>
-  );
-}
+    const data = {
+        id: 'hana',
+        pwd: '21color',
+    };
+    const fetchUser = async () => {
+        axios.post('http://localhost:3000', data).then((res) => {
+            console.log(res);
+        });
+    };
+    useEffect(() => {
+        fetchUser();
+    }, []);
 
+    return (
+        <div className="App">
+            <Layout />
+        </div>
+    );
+};
 
 export default App;

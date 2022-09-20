@@ -22,10 +22,13 @@
     "test:e2e": "jest --config ./test/jest-e2e.json"
   },
   "dependencies": {
+    "@nestjs/common": "^9.1.1",
     "@nestjs/core": "^8.0.0",
     "@nestjs/jwt": "^9.0.0",
     "@nestjs/passport": "^9.0.0",
     "@nestjs/platform-express": "^8.0.0",
+    "@nestjs/platform-fastify": "^9.1.1",
+    "@nestjs/swagger": "^6.1.2",
     "@twc/twc-models": "file:../twc-models/dist",
     "cors": "^2.8.5",
     "mongoose": "^6.6.1",
