@@ -4,7 +4,9 @@ import Footer from './Footer';
 import UserPage from './UserPage';
 import Login from './Login';
 import Signup from './Signup';
-
+import { useReducer, useEffect, useCallback } from 'react';
+import { User, ActivityLog, AttendaceInformation } from '@twc/twc-models';
+import axios from 'axios';
 
 function Layout() {
     return (

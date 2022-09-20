@@ -6,25 +6,15 @@ import Layout from './components/Layout/Layout';
 import react from 'react';
 import axios from 'axios';
 
-const App = () => {
-    const data = {
-        id: 'hana',
-        pwd: '21color',
-    };
-    const fetchUser = async () => {
-        axios.post('http://localhost:3000', data).then((res) => {
-            console.log(res);
-        });
-    };
-    useEffect(() => {
-        fetchUser();
-    }, []);
 
+
+
+const App = () => {
     return (
         <div className="App">
             <Layout />
         </div>
     );
 };
-
 export default App;
+
