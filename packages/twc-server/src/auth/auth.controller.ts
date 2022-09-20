@@ -21,7 +21,6 @@ export class AuthController {
     type: LoginOutput,
     description: '로그인 성공',
   })
-  
   @Post()
   async auth(@Body() input: LoginInput) {
     if (input.id === 'hana' && input.pwd === '21color') {
