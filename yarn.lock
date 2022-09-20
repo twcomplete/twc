@@ -1665,6 +1665,15 @@
     tslib "2.4.0"
     uuid "8.3.2"
 
+"@nestjs/common@^9.0.11":
+  version "9.0.11"
+  resolved "https://registry.npmjs.org/@nestjs/common/-/common-9.0.11.tgz"
+  integrity sha512-oYLIcOal3QOwcqt6goXovRNg8ZkalyOMjH0oYYzfJLrait6P7c6nAeWHu4qFDThY7GoZHEanLgji1qlqVEW09g==
+  dependencies:
+    iterare "1.2.1"
+    tslib "2.4.0"
+    uuid "8.3.2"
+
 "@nestjs/core@^8.0.0":
   version "8.4.7"
   resolved "https://registry.npmjs.org/@nestjs/core/-/core-8.4.7.tgz"

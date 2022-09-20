@@ -8,13 +8,12 @@ const Login = () => {
     const [pwd, setPwd] = React.useState('');
     const [err, setErr] = React.useState('');
     const [success, setSuccess] = React.useState(false);
-    const handleId = (e: React.ChangeEvent<HTMLInputElement>) => {};
 
     return (
         <div
             id="loginModal"
             aria-hidden="true"
-            className="hidden w-full h-full backdrop-blur-sm overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 md:inset-0 h-modal md:h-full bg-[rgba(0,0,0,0.3)]"
+            className="w-full h-full backdrop-blur-sm overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 md:inset-0 h-modal md:h-full bg-[rgba(0,0,0,0.3)]"
         >
             <div className="relative z-50 flex flex-col justify-center min-h-screen overflow-hidden">
                 <div className="w-full flex flex-col justify-center p-6 m-auto bg-white rounded-md shadow-md max-w-2xl sm:max-w-xl sm:text-xl">
