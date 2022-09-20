@@ -40,7 +40,9 @@ async function bootstrap() {
     // 응답 섹션 확장 해두기 여부
     expandResponses: 'all',
   };
-  await RedocModule.setup('/docs', app, document, redocOptions);
+  // await RedocModule.setup('/docs', app, document, redocOptions);
+  // error로 인하여 변경
+  await SwaggerModule.setup('docs', app, document);
   await app.listen(3000);
 }
 bootstrap();
