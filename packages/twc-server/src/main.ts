@@ -11,13 +11,13 @@ async function bootstrap() {
       origin: '*',
     }),
   );
-
   const config = new DocumentBuilder()
     .setTitle('#ㅇㅇㅇ')
     .setDescription('오운완 프로젝트입니다.')
     .setVersion('0.1')
     .addTag('ㅇㅇㅇ')
     .build();
+
   const document = SwaggerModule.createDocument(app, config);
   // SwaggerModule.setup('docs', app, document);
 

@@ -10,20 +10,6 @@ const Login = () => {
     const [success, setSuccess] = React.useState(false);
     const handleId = (e: React.ChangeEvent<HTMLInputElement>) => {};
 
-    useEffect(() => {
-        let isMounted = true;
-        const controller = new AbortController();
-        console.log(controller);
-    }, [id, pwd]);
-
-        const handleSubmit = async (e: any) => {
-        document.getElementById('loginModal')?.classList.add('hidden');
-        e.preventDefault();
-        setId('');
-        setPwd('');
-        setSuccess(true);
-    }
-
     return (
         <div
             id="loginModal"
@@ -33,7 +19,7 @@ const Login = () => {
             <div className="relative z-50 flex flex-col justify-center min-h-screen overflow-hidden">
                 <div className="w-full flex flex-col justify-center p-6 m-auto bg-white rounded-md shadow-md max-w-2xl sm:max-w-xl sm:text-xl">
                     <h1 className="text-3xl font-semibold text-center text-indigo-700">Ooo</h1>
-                    <form className="mt-6" onSubmit={handleSubmit}>
+                    <form className="mt-6">
                         <div className="mb-2">
                             <label htmlFor="id" className="block text-sm font-semibold text-gray-800">
                                 Email
@@ -71,11 +57,7 @@ const Login = () => {
                                 placeholder="Enter your password"
                             />
                         </div>
-                        <a
-                            href="#"
-                            className="text-xs text-indigo-600 hover:underline"
-                            onClick={() => alert('바보')}
-                        >
+                        <a href="#" className="text-xs text-indigo-600 hover:underline" onClick={() => alert('바보')}>
                             <span className="">비밀번호 생각이 안나요?</span>
                         </a>
                         <div className="mt-6">
@@ -91,8 +73,14 @@ const Login = () => {
                     <p className="mt-8 text-xs font-light text-center text-gray-700">
                         {' '}
                         Don't have an account?{' '}
-                        <a href="#" onClick={(e)=> {document.getElementById('loginModal')?.classList.add('hidden');
-                        document.getElementById('SignupModal')?.classList.remove('hidden')}} className="font-medium text-indigo-600 hover:underline">
+                        <a
+                            href="#"
+                            onClick={(e) => {
+                                document.getElementById('loginModal')?.classList.add('hidden');
+                                document.getElementById('SignupModal')?.classList.remove('hidden');
+                            }}
+                            className="font-medium text-indigo-600 hover:underline"
+                        >
                             Sign up
                         </a>
                     </p>

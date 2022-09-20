@@ -7,7 +7,7 @@ import axios from 'axios';
 const Header = () => {
     const today = new Date();
     return (
-        <header className="flex justify-evenly h-48 items-center text-white max-w-3xl m-auto">
+        <header className="flex justify-evenly items-center text-white max-w-3xl m-auto px-0 py-8">
             <div className="rounded-full p-2.5 bg-white max-w-[6rem] text-indigo-400 shadow-lg shadow-indigo-300/50 mr-3">
                 <img src={logo} className="max-w-full" />
             </div>
