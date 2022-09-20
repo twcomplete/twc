@@ -5,7 +5,7 @@ import logo from '../../img/Ooo.svg';
 import axios from 'axios';
 
 const loginuser = async () => {
-    const rt = await axios.post('http://localhost:3001/auth', { id: 'hana', pwd: '21color' });
+    const rt = await axios.post('http://localhost:3000/auth', { id: 'hana', pwd: '21color' });
     console.log(rt.data);
 };
 loginuser();
