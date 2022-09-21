@@ -1,19 +1,17 @@
 import React, { useRef, useCallback, useState, useEffect, MouseEvent } from 'react';
 import axios from 'axios';
+import { User, ActivityLog, AttendaceInformation } from '@twc/twc-models';
 
 const Login = () => {
-    const userRef = useRef<HTMLInputElement>(null);
-
+    const userRef = useRef(null);
     const [id, setId] = React.useState('');
     const [pwd, setPwd] = React.useState('');
-    const [err, setErr] = React.useState('');
-    const [success, setSuccess] = React.useState(false);
 
     return (
         <div
             id="loginModal"
             aria-hidden="true"
-            className="w-full h-full backdrop-blur-sm overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 md:inset-0 h-modal md:h-full bg-[rgba(0,0,0,0.3)]"
+            className="hidden w-full h-full backdrop-blur-sm overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 md:inset-0 h-modal md:h-full bg-[rgba(0,0,0,0.3)]"
         >
             <div className="relative z-50 flex flex-col justify-center min-h-screen overflow-hidden">
                 <div className="w-full flex flex-col justify-center p-6 m-auto bg-white rounded-md shadow-md max-w-2xl sm:max-w-xl sm:text-xl">
@@ -32,7 +30,6 @@ const Login = () => {
                                 id="email"
                                 ref={userRef}
                                 autoComplete="off"
-                                value={id}
                                 className="block w-full px-4 py-2 mt-2 text-indigo-700 bg-white border rounded-md focus:border-indigo-400 focus:ring-indigo-300 focus:outline-none focus:ring focus:ring-opacity-40"
                                 placeholder="Enter your email"
                             />
@@ -50,7 +47,6 @@ const Login = () => {
                                 id="password"
                                 ref={userRef}
                                 autoComplete="off"
-                                value={pwd}
                                 required
                                 className="block w-full px-4 py-2 mt-2 text-indigo-700 bg-white border rounded-md focus:border-indigo-400 focus:ring-indigo-300 focus:outline-none focus:ring focus:ring-opacity-40"
                                 placeholder="Enter your password"
@@ -63,7 +59,6 @@ const Login = () => {
                             <button
                                 className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-indigo-700 rounded-md hover:bg-indigo-600 focus:outline-none focus:bg-indigo-600"
                                 type="submit"
-                                onClick={() => alert()}
                             >
                                 Login
                             </button>
