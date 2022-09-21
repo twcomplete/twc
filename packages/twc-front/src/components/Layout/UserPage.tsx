@@ -24,8 +24,6 @@ const UserPage = () => {
 
     return (
         <>
-            <Signup />
-            <Login />
             <section
                 className="flex flex-col justify-center items-center
     w-full h-full"
@@ -35,7 +33,7 @@ const UserPage = () => {
                 </div>
                 <div className="p-6">
                     <h1 className="mb-3 font-bold text-9xl text-white">{title.title}</h1>
-                    <Dday name=""></Dday>
+                    <Dday name="hana"></Dday>
                 </div>
                 <TwcCal></TwcCal>
             </section>
