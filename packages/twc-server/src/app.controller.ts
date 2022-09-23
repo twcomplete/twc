@@ -27,6 +27,10 @@ export class AppController {
   @ApiServiceUnavailableResponse({ status: 503, description: '과부하' })
   @Get()
   healthCheck(): string {
-    return this.appService.healthCheck();
+    try {
+      return this.appService.healthCheck();
+    } catch (e) {
+      console.log(e);
+    }
   }
 }
