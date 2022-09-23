@@ -1,6 +1,6 @@
 export class ActivityLog {
     _id: number;
-    userId: number;
+    userId: string | number;
     wtime: Date;
     mtime: Date;
 }
