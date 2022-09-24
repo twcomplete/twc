@@ -6,6 +6,7 @@ import Signup from './Signup';
 import TwcCal from './TwcCal';
 import { useEffect, useState } from 'react';
 import { LoginInput, LoginOutput, User, ActivityLog, AttendaceInformation } from '@twc/twc-models';
+import MemoList from './MemoList';
 
 const title = {
     title: 'Ooo',
@@ -33,9 +34,10 @@ const UserPage = () => {
 
     return (
         <>
+            <MemoList></MemoList>
             <section
                 className="flex flex-col justify-center items-center
-    w-full h-full"
+                w-full h-full"
             >
                 <div className="max-w-[90%] flex flex-col justify-center items-center text-center ">
                     <h1 className="text-4xl font-bold text-white opacity-40">"{workOutProverb}"</h1>

@@ -20,3 +20,20 @@ html {
 .fc-toolbar-title {
   font-size: 3rem;
 }
+
+input.typlist {
+  padding-right: 10px;
+  padding-left: 10px;
+  letter-spacing: .2rem;
+  background: inherit;
+  font-size: 2rem;
+  color: #202020;
+}
+
+button.addList {
+  font-size: 3rem;
+  width: 4rem;
+  height: 4rem;
+  text-align: center;
+  line-height: 3.5rem;
+}

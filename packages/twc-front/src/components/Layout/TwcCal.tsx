@@ -8,7 +8,6 @@ import MemoList from './MemoList';
 function TwcCal() {
     return (
         <>
-            <MemoList></MemoList>
             <article className="w-[90%] mb-[20px] p-3 bg-indigo-200 text-indigo-500 shadow-lg shadow-indigo-600/50 rounded-xl border-indigo-400">
                 <FullCalendar
                     viewClassNames={'w-full'}

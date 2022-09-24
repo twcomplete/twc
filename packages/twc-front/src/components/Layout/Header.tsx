@@ -25,7 +25,7 @@ const Header = () => {
             <div className="rounded-full p-2.5 bg-white max-w-[6rem] text-indigo-400 shadow-lg shadow-indigo-300/50 mr-3">
                 <img src={logo} className="max-w-full" />
             </div>
-            <div className="rounded-full p-6 bg-white shadow-lg shadow-indigo-300/50 text-indigo-400 px-10 text-3xl">
+            <div className="rounded-full p-6 bg-white shadow-lg shadow-indigo-300/50 text-indigo-400 px-10 text-2xl">
                 <span className="">
                     {today.getFullYear()}년 {today.getMonth()}월 {today.getDate()}일
                 </span>

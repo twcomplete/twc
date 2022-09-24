@@ -21,6 +21,7 @@
         "@twc/twc-models": "file:../twc-models/dist",
         "axios": "^0.27.2",
         "react": "^18.2.0",
+        "react-async": "^10.0.1",
         "react-datepicker": "^4.8.0",
         "react-dom": "^18.2.0",
         "react-hook-form": "^7.35.0",
