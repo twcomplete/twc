@@ -1,11 +1,13 @@
 {
-    "packages": ["packages/*"],
-    "version": "independent",
-    "npmClient": "yarn",
-    "useWorkspaces": true,
-    "command": {
-        "bootstrap": {}
-    },
-    "$schema": "node_modules/lerna/schemas/lerna-schema.json",
-    "useNx": false
+  "packages": [
+    "packages/*"
+  ],
+  "version": "independent",
+  "npmClient": "yarn",
+  "useWorkspaces": true,
+  "command": {
+    "bootstrap": {
+      "ignore": "@imwebme/ica-lambdas"
+    }
+  }
 }
