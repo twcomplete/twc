@@ -3,11 +3,12 @@ import { User, ActivityLog, AttendaceInformation } from '@twc/twc-models';
 import React from 'react';
 import logo from '../../img/Ooo.svg';
 import axios from 'axios';
+import TwcCal from './TwcCal';
 
 const loginuser = async () => {
     axios({
         method: 'post',
-        url: 'http://localhost:3000/auth',
+        url: 'localhost:3000/auth',
         data: {
             id: 'hana',
             pwd: '21color',
@@ -32,7 +33,6 @@ const Header = () => {
             </div>
             <button
                 id="check_attned"
-                onClick={() => alert('출석')}
                 className="rounded-full p-6 bg-white shadow-lg shadow-indigo-300/50 text-indigo-400 px-10 ml-3 text-2xl"
             >
                 출석체크

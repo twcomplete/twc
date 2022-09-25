@@ -6,7 +6,6 @@ import Signup from './Signup';
 import TwcCal from './TwcCal';
 import { useEffect, useState } from 'react';
 import { LoginInput, LoginOutput, User, ActivityLog, AttendaceInformation } from '@twc/twc-models';
-import MemoList from './MemoList';
 
 const title = {
     title: 'Ooo',
@@ -16,7 +15,7 @@ const UserPage = () => {
     const [user, setUser] = useState<User>();
 
     useEffect(() => {
-        axios.get('http://localhost:3000/users').then((reponse) => {
+        axios.get('localhost:3000/users').then((reponse) => {
             setUser(reponse.data);
         });
     }, []);
@@ -34,7 +33,6 @@ const UserPage = () => {
 
     return (
         <>
-            <MemoList></MemoList>
             <section
                 className="flex flex-col justify-center items-center
                 w-full h-full"

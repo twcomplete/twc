@@ -9,7 +9,6 @@ import axios from 'axios';
 import { useCallback } from 'preact/hooks';
 
 const App = () => {
-
     return (
         <div className="App">
             <Layout />

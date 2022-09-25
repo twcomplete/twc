@@ -2,37 +2,45 @@
 *,
 *::before,
 a::after {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 body,
 html {
-  font-size: 62.5%;
-  color: #202020;
-  width: 100%;
-  height: 100vh;
-  font-family: 'GmarketSansMedium';
-  letter-spacing: .1rem;
+    font-size: 62.5%;
+    color: #202020;
+    width: 100%;
+    height: 100vh;
+    font-family: 'GmarketSansMedium';
+    letter-spacing: 0.1rem;
 }
 
 .fc-toolbar-title {
-  font-size: 3rem;
+    font-size: 3rem;
 }
 
 input.typlist {
-  padding-right: 10px;
-  padding-left: 10px;
-  letter-spacing: .2rem;
-  background: inherit;
-  font-size: 2rem;
-  color: #202020;
+    padding-right: 10px;
+    padding-left: 10px;
+    letter-spacing: 0.2rem;
+    background: inherit;
+    font-size: 2rem;
+    color: #202020;
 }
 
 button.addList {
-  font-size: 3rem;
-  width: 4rem;
-  height: 4rem;
-  text-align: center;
-  line-height: 3.5rem;
+    font-size: 3rem;
+    width: 4rem;
+    height: 4rem;
+    text-align: center;
+    line-height: 3.5rem;
+}
+
+.fc-daygrid-day-events a.complate-day {
+    display: block;
+    font-size: 0px !important;
+}
+.fc tr td.fc-daygrid-day.fc-day-today {
+    background-color: transparent;
 }
