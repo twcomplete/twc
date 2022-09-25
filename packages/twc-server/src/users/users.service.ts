@@ -3,6 +3,9 @@ import { User } from '@twc/twc-models';
 
 @Injectable()
 export class UsersService {
+  async getUser(_id: number): Promise<User> {
+    throw new Error('Method not implemented.');
+  }
   getUsers(): string {
     return 'getUsers';
   }
@@ -23,6 +26,6 @@ export class UsersService {
 
   private saveUser(input: User, signupVerifyToken: string) {
     return; // TODO: 추후 구현
-    
   }
+
 }
