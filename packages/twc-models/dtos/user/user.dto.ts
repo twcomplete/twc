@@ -4,4 +4,6 @@ export class User {
     password: string;
     name: string;
     phone: number;
+    height: number;
+    weight: number;
 }

@@ -31,7 +31,7 @@ export class UsersController {
     description: '유저 정보',
   })
   @Post()
-  save(@Body() input) {
+  save(@Body() input ) {
     return this.usersService.save(input);
   }
 }

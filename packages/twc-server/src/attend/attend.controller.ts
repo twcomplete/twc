@@ -21,6 +21,7 @@ export class AttendController {
   async findAll(duration) {
     return await this.attendService.findAll();
   }
+
   @ApiOperation({
     summary: '출석 체크 입력',
     description: '로그인한 사용자의 출석체크',
