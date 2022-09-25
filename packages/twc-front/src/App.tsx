@@ -7,12 +7,18 @@ import react from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import axios from 'axios';
 import { useCallback } from 'preact/hooks';
+import { conformsTo } from 'lodash';
+import Signup from './components/Layout/Signup';
+import Login from './components/Layout/Login';
 
 const App = () => {
-
     return (
-        <div className="App">
-            <Layout />
+        <div className="App max-w-7xl m-auto">
+            <Router>
+                <Routes>
+                    <Route path="/home" element={<Layout />} />
+                </Routes>
+            </Router>
         </div>
     );
 };

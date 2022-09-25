@@ -1,25 +1,46 @@
 import React, { useRef, useCallback, useState, useEffect, MouseEvent } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import { LoginInput } from '@twc/twc-models';
+
 import { User, ActivityLog, AttendaceInformation } from '@twc/twc-models';
 
 const Login = () => {
-    const userRef = useRef(null);
-    const [id, setId] = React.useState('');
-    const [pwd, setPwd] = React.useState('');
+    const [id, setId] = useState('');
+    const [pwd, setPwd] = useState('');
+
+    const user = {
+        id,
+        pwd,
+    };
+    const handleLogin = async (e: any) => {
+        e.preventDefault();
+        await axios
+            .post('/api/auth', user)
+            .then((res) => {
+                console.log(res);
+                const { data } = res.data;
+                axios.defaults.headers.common['Authorization'] = `Bearer ${data.token}`;
+                window.location.reload();
+            })
+            .catch((err) => {
+                console.log(`err : ${err}`);
+            });
+    };
 
     return (
         <div
             id="loginModal"
             aria-hidden="true"
-            className="hidden w-full h-full backdrop-blur-sm overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 md:inset-0 h-modal md:h-full bg-[rgba(0,0,0,0.3)]"
+            className="w-full h-full backdrop-blur-sm overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 md:inset-0 h-modal md:h-full bg-[rgba(0,0,0,0.3)]"
         >
             <div className="relative z-50 flex flex-col justify-center min-h-screen overflow-hidden">
                 <div className="w-full flex flex-col justify-center p-6 m-auto bg-white rounded-md shadow-md max-w-2xl sm:max-w-xl sm:text-xl">
                     <h1 className="text-3xl font-semibold text-center text-indigo-700">Ooo</h1>
-                    <form className="mt-6">
+                    <form className="mt-6" onSubmit={handleLogin}>
                         <div className="mb-2">
                             <label htmlFor="id" className="block text-sm font-semibold text-gray-800">
-                                Email
+                                id
                             </label>
                             <input
                                 onChange={(e) => {
@@ -27,8 +48,8 @@ const Login = () => {
                                     console.log(e.target.value);
                                 }}
                                 type="text"
-                                id="email"
-                                ref={userRef}
+                                id="id"
+                                value={id}
                                 autoComplete="off"
                                 className="block w-full px-4 py-2 mt-2 text-indigo-700 bg-white border rounded-md focus:border-indigo-400 focus:ring-indigo-300 focus:outline-none focus:ring focus:ring-opacity-40"
                                 placeholder="Enter your email"
@@ -45,7 +66,7 @@ const Login = () => {
                                 }}
                                 type="password"
                                 id="password"
-                                ref={userRef}
+                                value={pwd}
                                 autoComplete="off"
                                 required
                                 className="block w-full px-4 py-2 mt-2 text-indigo-700 bg-white border rounded-md focus:border-indigo-400 focus:ring-indigo-300 focus:outline-none focus:ring focus:ring-opacity-40"

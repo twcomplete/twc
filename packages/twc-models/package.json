@@ -1,6 +1,6 @@
 {
     "name": "twc-models",
-    "version": "1.0.95",
+    "version": "1.0.122",
     "main": "index.ts",
     "scripts": {
         "build": "tsc"

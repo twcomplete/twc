@@ -75,8 +75,10 @@ const Signup = () => {
                         <a
                             href="#"
                             className="font-medium text-indigo-600 hover:underline"
-                            onClick={() =>{ document.getElementById('loginModal')?.classList.remove('hidden');
-                            document.getElementById('SignupModal')?.classList.add('hidden')}}
+                            onClick={() => {
+                                document.getElementById('loginModal')?.classList.remove('hidden');
+                                document.getElementById('SignupModal')?.classList.add('hidden');
+                            }}
                         >
                             Log in
                         </a>

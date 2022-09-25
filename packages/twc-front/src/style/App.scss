@@ -12,9 +12,16 @@ html {
   font-size: 62.5%;
   color: #202020;
   width: 100%;
+  display: flex;
   height: 100vh;
-  font-family: 'GmarketSansMedium';
+  justify-content: center;
+  font-family: 'MonoplexKR-Regular';
   letter-spacing: .1rem;
+}
+
+
+button {
+  font-family: 'MonoplexKR-Regular';
 }
 
 .fc-toolbar-title {
@@ -26,9 +33,19 @@ input.typlist {
   padding-left: 10px;
   letter-spacing: .2rem;
   background: inherit;
-  font-size: 2rem;
+  font-size: 1rem;
   color: #202020;
 }
+
+#root {
+  width: 100%;
+}
+
+.App {
+  width: 100%;
+}
+
+
 
 button.addList {
   font-size: 3rem;

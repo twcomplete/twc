@@ -11,9 +11,9 @@ import axios from 'axios';
 
 function Layout() {
     return (
-        <div className="flex flex-col from-indigo-100 via-indigo-300 to-indigo-500 bg-gradient-to-b h-screen">
-            <Signup />
+        <div className="flex flex-col from-indigo-100 via-indigo-300 to-indigo-500 relative w-full bg-gradient-to-b h-screen overflow-hidden">
             <Login />
+            <Signup />
             <Header />
             <UserPage />
             <Footer />

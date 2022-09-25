@@ -4,20 +4,6 @@ import React from 'react';
 import logo from '../../img/Ooo.svg';
 import axios from 'axios';
 
-const loginuser = async () => {
-    axios({
-        method: 'post',
-        url: 'http://localhost:3000/auth',
-        data: {
-            id: 'hana',
-            pwd: '21color',
-        },
-    }).then((response) => {
-        console.log(response);
-    });
-};
-loginuser();
-
 const Header = () => {
     const today = new Date();
     return (

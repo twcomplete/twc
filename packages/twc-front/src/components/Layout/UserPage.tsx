@@ -13,12 +13,17 @@ const title = {
 };
 
 const UserPage = () => {
-    const [user, setUser] = useState<User>();
+    const [users, setUser] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:3000/users').then((reponse) => {
-            setUser(reponse.data);
-        });
+        axios.get('/user').then(
+            (reponse) => {
+                setUser(reponse.data);
+            },
+            (error) => {
+                console.log(error);
+            },
+        );
     }, []);
 
     const workOutProverbs = [
@@ -34,18 +39,20 @@ const UserPage = () => {
 
     return (
         <>
-            <MemoList></MemoList>
             <section
                 className="flex flex-col justify-center items-center
                 w-full h-full"
             >
-                <div className="max-w-[90%] flex flex-col justify-center items-center text-center ">
+                <div className="w-full flex flex-col justify-center items-center text-center ">
                     <h1 className="text-4xl font-bold text-white opacity-40">"{workOutProverb}"</h1>
+                    <MemoList></MemoList>
                 </div>
                 <div className="p-6">
                     <h1 className="mb-3 font-bold text-9xl text-white">{title.title}</h1>
-                    <Dday users={user}></Dday>
                 </div>
+                {users.map((post) => {
+                    <Dday users={post}></Dday>;
+                })}
                 <TwcCal></TwcCal>
             </section>
         </>
