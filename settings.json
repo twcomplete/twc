@@ -15,17 +15,11 @@
     "eslint.packageManager": "yarn",
     "eslint.lintTask.enable": true,
     // todo tree 확장
-    "todo-tree.filtering.excludeGlobs": [
-        "**/node_modules",
-        "**/sdks"
-    ],
+    "todo-tree.filtering.excludeGlobs": ["**/node_modules", "**/sdks"],
     // jest
     "jest.autoRun": "off",
     "jest.jestCommandLine": "yarn test",
     "[javascript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[typescriptreact]": {
-        "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
     }
 }
