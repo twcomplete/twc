@@ -6,7 +6,7 @@
     ],
     "scripts": {
         "models:update": "cd packages/twc-models && yarn version --patch --no-git-tag-version && yarn build && cd ../.. && yarn",
-        "server:up": "yarn models:update && cd packages/twc-server && yarn start:prod",
+        "server:up": "cd packages/twc-server && yarn start:prod",
         "server:update": "cd packages/twc-server && yarn"
     },
     "devDependencies": {
