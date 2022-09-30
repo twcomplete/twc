@@ -5,12 +5,21 @@ import Login from './Login';
 import Signup from './Signup';
 import TwcCal from './TwcCal';
 import { useEffect, useState } from 'react';
+import { LoginInput, LoginOutput, User, ActivityLog, AttendaceInformation } from '@twc/twc-models';
 
 const title = {
     title: 'Ooo',
 };
 
 const UserPage = () => {
+    const [user, setUser] = useState<User>();
+
+    useEffect(() => {
+        axios.get('http://localhost:3000/users').then((reponse) => {
+            setUser(reponse.data);
+        });
+    }, []);
+
     const workOutProverbs = [
         '오늘은 운동을 하지 않았다. 살 이유가 없다.',
         '운동하지 않는 자 먹지도 말라',
@@ -33,7 +42,7 @@ const UserPage = () => {
                 </div>
                 <div className="p-6">
                     <h1 className="mb-3 font-bold text-9xl text-white">{title.title}</h1>
-                    <Dday name="hana"></Dday>
+                    <Dday users={user}></Dday>
                 </div>
                 <TwcCal></TwcCal>
             </section>

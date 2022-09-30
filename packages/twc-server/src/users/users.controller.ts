@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Post } from '@nestjs/common';
+import { Body, Controller, Get, Post, Param } from '@nestjs/common';
 import { UsersService } from './users.service';
 import { User } from '@twc/twc-models';
 import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
@@ -8,7 +8,7 @@ export class UsersController {
   constructor(private readonly usersService: UsersService) {}
 
   @ApiOperation({
-    summary: '유저 정보 가져오기',
+    summary: '전체 유저 정보 가져오기',
     description: '가입 유저 전체 리스트 가져오기',
   })
   @ApiResponse({
@@ -31,7 +31,22 @@ export class UsersController {
     description: '유저 정보',
   })
   @Post()
-  save(@Body() input) {
-    return this.usersService.save(input);
+  createUser(@Body() input: User ): Promise<string> {
+    return this.usersService.createUser(input);
   }
+
+  @ApiOperation({
+    summary: '특정 유저 정보 가져오기',
+    description: '특정 유저의 정보 가져오기',
+  })
+  @ApiResponse({
+    status: 200,
+    type: [User],
+    description: '유저 정보',
+  })
+  @Get('/:_id')
+  async getUser(@Param('_id') _id: number): Promise<User> {
+    return await this.usersService.getUser(_id);
+  }
+    
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import { LoginInput, LoginOutput, User, ActivityLog, AttendaceInformation } from '@twc/twc-models';
 
-function Dday(props: { name: string }) {
+function Dday(props: any) {
     return (
         <div className="max-w-48">
             <div className="flex justify-center text-4xl items-center">

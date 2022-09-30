@@ -5,8 +5,16 @@ import logo from '../../img/Ooo.svg';
 import axios from 'axios';
 
 const loginuser = async () => {
-    const rt = await axios.post('http://localhost:3000/auth', { id: 'hana', pwd: '21color' });
-    console.log(rt.data);
+    axios({
+        method: 'post',
+        url: 'http://localhost:3000/auth',
+        data: {
+            id: 'hana',
+            pwd: '21color',
+        },
+    }).then((response) => {
+        console.log(response);
+    });
 };
 loginuser();
 
